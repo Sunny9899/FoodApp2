@@ -9,13 +9,26 @@
 <link rel="stylesheet" href="./styles/style.css"/>
 <body>
 <div id="navbar"></div>
+<div id="meal"></div>
 
     <script type="module">
 import nav from './components/nav.js';
-
 let nav_div=document.getElementById("navbar");
-
 nav_div.innerHTML=nav();
+
+
+async function show(){
+  let res= await fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood");
+  let dat=await res.json();
+  addData(dat.meals);
+}
+
+show();
+
+function addData(M){
+
+    M.forEach((m)=>{})
+}
     </script>    
 
 </body>

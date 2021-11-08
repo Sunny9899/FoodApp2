@@ -29,15 +29,47 @@ import nav from './components/nav.js';
 let nav_div=document.getElementById("navbar");
 nav_div.innerHTML=nav();
 
-let form_data=document.getElementById("signup");
+
+function Signup(e){
+
+    e.preventDefault();
+
+let form=document.getElementById("signup");
 
 let user_data={
     name:form.name.value,
     email:form.email.value,
     password:form.password.value,
     username:form.username.value,
+    mobile:form.mobile.value,
+    description:form.description.value,
 }
-    </script>    
+
+user_data=JSON.stringify(user_data);
+
+
+fetch("https://github.com/masai-school/api-mocker/wiki/Authentication-https://masai-api-mocker.herokuapp.com",{
+
+
+method:'POST',
+body:user_data,
+headers:{
+    'Content-Type':'application/json'
+},
+})
+.then((res)=>{
+    return res.json();
+})
+.then((res2)=>{
+    console.log(res2);
+})
+.catch((e)=>{
+    console.log(e);
+})
+    
+}
+
+</script>    
 
 </body>
 </html>
