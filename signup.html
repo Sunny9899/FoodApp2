@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+<link rel="stylesheet" href="./styles/style.css"/>
+<body>
+<div id="navbar"></div>
+
+<div id="signup">
+    <form id="signup" onsubmit= "SignUp(user)">
+    <h2>SignUp</h2>
+    <input type="text" id="name" placeholder="Enter Name"/>
+    <input type="email" id="email" placeholder="Enter Email"/>
+    <input type="password" id="password" placeholder="Enter Password"/>
+    <input type="text" id="username" placeholder="username"/>
+    <input type="number" id="mobile" placeholder="mobilenumber"/>
+    <input type="text" id="description" placeholder="Description"/>
+    <input type="submit"/>    
+    </form>
+</div>
+
+<script type="module">
+
+import nav from './components/nav.js';
+let nav_div=document.getElementById("navbar");
+nav_div.innerHTML=nav();
+
+let form_data=document.getElementById("signup");
+
+let user_data={
+    name:form.name.value,
+    email:form.email.value,
+    password:form.password.value,
+    username:form.username.value,
+}
+    </script>    
+
+</body>
+</html>
