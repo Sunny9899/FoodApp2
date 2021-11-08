@@ -43,7 +43,7 @@ let parent=document.getElementById("meal");
 
         let btn=document.createElement("button");
         btn.textContent="Add To Cart";
-        btn.onclick=addCart();
+        btn.onclick= function addCart(){};
 
         div.append(img,name,price,btn);
         parent.append(div);
